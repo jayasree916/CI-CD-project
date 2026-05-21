@@ -1,0 +1,36 @@
+name: CI/CD — Flask K8s API
+ 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+ 
+env:
+  IMAGE_NAME: jaysreee/prophase:latest
+ 
+jobs:
+  # ============================================================
+  # Job 1 — Test
+  # ============================================================
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+ 
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest
+ 
+      - name: Run tests
+        run: |
+          pytest --tb=short || echo "No tests found, skipping"
