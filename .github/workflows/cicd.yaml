@@ -7,7 +7,7 @@ on:
     branches: [ main ]
  
 env:
-  IMAGE_NAME: jaysreee/prophase:latest
+  IMAGE_NAME: jaysreee/prophase
  
 jobs:
   # ============================================================
