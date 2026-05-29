@@ -11,7 +11,7 @@ START_TIME = datetime.utcnow()
 @app.route("/", methods=["GET"])
 def index():
     return jsonify({
-        "message": "Welcome to the K8s Demo API",
+        "message": "Welcome to the K8s Demo API testing application!",
         "status": "running",
         "hostname": socket.gethostname(),
         "version": "1.0.0"
