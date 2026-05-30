@@ -96,10 +96,10 @@ jobs:
  
       - name: Wait for rollout
         run: |
-          kubectl rollout status deployment/flask-k8s-api --timeout=120s
+          kubectl rollout status deployment/flask-api --timeout=120s
  
       - name: Verify deployment
         run: |
-          kubectl get pods -l app=flask-k8s-api
+          kubectl get pods -l app=flask-api
           kubectl get svc
  
